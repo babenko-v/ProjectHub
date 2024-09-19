@@ -6,12 +6,11 @@ import {Outlet} from "react-router-dom";
 function Navigation() {
     return (
         <nav>
-            <ul>
-                <li>
-                    <Link to="/registration">Домашня</Link>
-                    <Outlet></Outlet>
-                </li>
-            </ul>
+            <Link to="/">Landing</Link>
+            <Link to="/registration">Registration</Link>
+            <Link to="/login">Login</Link>
+
+            <Outlet></Outlet>
         </nav>
     );
 }

@@ -2,9 +2,6 @@ import { useState } from 'react';
 
 function Registration() {
     const [registrationForm, setRegistrationForm] = useState({
-        name: '',
-        surname: '',
-        phoneNumber: '',
         email: '',
         password: ''
     });
@@ -16,34 +13,6 @@ function Registration() {
                 <div className="master_2">
                     <h2 className="header_regist">Registration</h2>
                     <div className="input">
-
-                        <input
-                            className="form-control mx-auto my-3"
-                            placeholder="Ім'я"
-                            type="text"
-                            name="username"
-                            value={registrationForm.name}
-                            onChange={(event) => setRegistrationForm(prev => ({...prev, name: event.target.value}))}
-                        />
-
-                        <input
-                            className="form-control mx-auto my-3"
-                            placeholder="Прізвище"
-                            type="text"
-                            name="surname"
-                            value={registrationForm.surname}
-                            onChange={(event) => setRegistrationForm(prev => ({...prev, surname: event.target.value}))}
-                        />
-
-                        <input
-                            className="form-control mx-auto my-3"
-                            placeholder="Номер телефону"
-                            type="tel"
-                            name="phoneNumber"
-                            value={registrationForm.phoneNumber}
-                            onChange={(event) => setRegistrationForm(prev => ({...prev, phoneNumber: event.target.value}))}
-                        />
-
                         <input
                             className="form-control mx-auto my-3"
                             placeholder="Ваш email"
