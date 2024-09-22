@@ -46,7 +46,7 @@ class CustomUserManager(BaseUserManager):
         return self.create_user(email, password, **extra_fields)
 
 class CustomUser(AbstractBaseUser, PermissionsMixin):
-    nickname = models.CharField(unique=True, max_length=50, verbose_name='name')
+    username = models.CharField(unique=True, max_length=50, verbose_name='username')
     email = models.EmailField(unique=True)
     github_link = models.URLField(max_length=200, blank=True, null=True)
 
