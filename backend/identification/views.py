@@ -1,3 +1,4 @@
+from rest_framework.generics import GenericAPIView
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework_simplejwt.views import TokenObtainPairView
 from django.contrib.auth import authenticate
@@ -6,6 +7,8 @@ from django.views.decorators.csrf import csrf_protect
 from rest_framework_simplejwt.views import TokenRefreshView
 from django.http import JsonResponse
 from rest_framework import status
+from .serializers import UserRegisterSerializer
+from rest_framework.response import Response
 
 @method_decorator(csrf_protect, name='dispatch')
 class CustomTokenObtainPairView(TokenObtainPairView):
@@ -41,3 +44,11 @@ class CustomTokenRefreshView(TokenRefreshView):
         request.data = data
 
         return super().post(request, *args, **kwargs)
+
+class UserRegistration(GenericAPIView):
+    def post(self, request):
+        serializer = UserRegisterSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response({"message": "Пользователь успешно создан"}, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
