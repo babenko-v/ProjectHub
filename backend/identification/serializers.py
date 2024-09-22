@@ -1,7 +1,5 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
-from rest_framework import serializers
-from django.contrib.auth import get_user_model
 from django.contrib.auth.password_validation import validate_password
 
 
@@ -21,7 +19,7 @@ class UserRegisterSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('email', 'username', 'programming_area', 'password', 'password2')
+        fields = ('email', 'username',  'password', 'password2')
         extra_kwargs = {
             'email': {'required': True, 'allow_blank': False},
             'username': {'required': True, 'allow_blank': False}

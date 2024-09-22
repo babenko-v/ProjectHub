@@ -1,4 +1,5 @@
 from rest_framework.generics import GenericAPIView
+from rest_framework.permissions import AllowAny
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework_simplejwt.views import TokenObtainPairView
 from django.contrib.auth import authenticate
@@ -45,9 +46,12 @@ class CustomTokenRefreshView(TokenRefreshView):
 
         return super().post(request, *args, **kwargs)
 
-class UserRegistration(GenericAPIView):
+class UserRegistrationView(GenericAPIView):
+    serializer_class = UserRegisterSerializer
+    permission_classes = [AllowAny]
+
     def post(self, request):
-        serializer = UserRegisterSerializer(data=request.data)
+        serializer = self.get_serializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response({"message": "Пользователь успешно создан"}, status=status.HTTP_201_CREATED)
