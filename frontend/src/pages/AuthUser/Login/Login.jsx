@@ -40,9 +40,6 @@ function Registration() {
             </form>
 
             <div>
-                <h1>Name: {registrationForm.name}</h1>
-                <h1>Surname: {registrationForm.surname}</h1>
-                <h1>Phone Number: {registrationForm.phoneNumber}</h1>
                 <h1>Email: {registrationForm.email}</h1>
                 <h1>Password: {registrationForm.password}</h1>
             </div>
