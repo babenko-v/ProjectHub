@@ -1,8 +1,9 @@
 import axios from 'axios';
+import api from "./interceptors.jsx";
 
 export const login = async (email, password) => {
     try {
-        const response = await axios.post('/api/token/', {
+        const response = await api.post('/api/token/', {
             email,
             password,
         });

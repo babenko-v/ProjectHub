@@ -1,15 +1,27 @@
 import { useState } from 'react';
+import { login } from "../../../services/auth.jsx";
 
-function Registration() {
+function Login() {
     const [registrationForm, setRegistrationForm] = useState({
         email: '',
         password: ''
     });
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();  // чтобы предотвратить перезагрузку страницы
+
+        try {
+            // Вызываем функцию логина
+            await login(registrationForm.email, registrationForm.password);
+            console.log('Успешная регистрация');
+        } catch (error) {
+            console.error('Ошибка при регистрации:', error);
+        }
+    }
 
     return (
         <div className="container mx-auto cont">
-            <form action="#" method="POST">
+            <form action="#" method="POST" onSubmit={handleSubmit}>  {/* Здесь изменяем onChange на onSubmit */}
                 <div className="master_2">
                     <h2 className="header_regist">Registration</h2>
                     <div className="input">
@@ -30,10 +42,9 @@ function Registration() {
                             value={registrationForm.password}
                             onChange={(event) => setRegistrationForm(prev => ({...prev, password: event.target.value}))}
                         />
-
                     </div>
                     <div className="md-mx-auto btn-reg">
-                        <button className='button_left' type="submit">Зареєструватися</button>
+                        <button className='button_left' type="submit">Зареєструватися</button> {/* Кнопка для отправки */}
                         <button className='button_right' type="reset">Уже маю аккаунт</button>
                     </div>
                 </div>
@@ -47,4 +58,4 @@ function Registration() {
     );
 }
 
-export default Registration;
+export default Login;

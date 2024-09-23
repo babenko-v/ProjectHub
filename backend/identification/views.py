@@ -9,7 +9,7 @@ from django.http import JsonResponse
 from rest_framework import status
 from .serializers import UserRegisterSerializer
 from rest_framework.response import Response
-from utils import generate_tokens_and_set_cookie
+from .utils import generate_tokens_and_set_cookie
 from django.contrib.auth import get_user_model
 
 User = get_user_model()

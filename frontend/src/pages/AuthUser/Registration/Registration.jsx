@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import axios from "axios";
+import api from "../../../services/interceptors.jsx";
 
 function Registration() {
     const [registrationForm, setRegistrationForm] = useState({
@@ -16,7 +17,7 @@ function Registration() {
         e.preventDefault();  // чтобы предотвратить перезагрузку страницы
 
         try {
-            await axios.post('http://127.0.0.1:8000/auth/registration/', {
+            await api.post('auth/registration/', {
                 email: registrationForm.email,
                 username: registrationForm.username,
                 password: registrationForm.password,
@@ -29,7 +30,6 @@ function Registration() {
             console.error('Ошибка при регистрации:', error);
         }
     }
-
 
     return (
         <div className="container mx-auto cont">

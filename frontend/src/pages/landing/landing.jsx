@@ -1,6 +1,7 @@
 import cl from "./Landing.module.css"
 import {useEffect, useState} from "react";
 import axios from "axios";
+import api from "../../services/interceptors.jsx";
 
 
 function Landing() {
@@ -9,7 +10,7 @@ function Landing() {
 
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/user/')
+        api.get('user/')
             .then(response => {
                 setProducts(response.data);
             })
