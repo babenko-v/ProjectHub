@@ -15,12 +15,10 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 
 class CustomTokenObtainPairView(TokenObtainPairView):
-    permission_classes = [AllowAny]
 
     def post(self, request, *args, **kwargs):
         email = request.data.get("email")
         password = request.data.get("password")
-        print(email, password)
 
         user = authenticate(request, email=email, password=password)
         if user is not None:

@@ -3,7 +3,7 @@ import api from "./interceptors.jsx";
 
 export const login = async (email, password) => {
     try {
-        const response = await api.post('/api/token/', {
+        const response = await api.post('/auth/api/token/', {
             email,
             password,
         });

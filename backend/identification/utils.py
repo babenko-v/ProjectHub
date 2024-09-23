@@ -8,13 +8,12 @@ def generate_tokens_and_set_cookie(user):
         'access': str(refresh.access_token)
     })
 
-    # Устанавливаем refresh токен в HttpOnly cookie
     response.set_cookie(
         key='refresh_token',
         value=str(refresh),
         httponly=True,
         secure=False,  # Установите True в продакшене
-        samesite='Lax'
+        samesite=None # Установите 'Lax' в продакшене
     )
 
     return response

@@ -2,20 +2,20 @@ import { useState } from 'react';
 import { login } from "../../../services/auth.jsx";
 
 function Login() {
-    const [registrationForm, setRegistrationForm] = useState({
+    const [loginForm, setLoginForm] = useState({
         email: '',
         password: ''
     });
 
     const handleSubmit = async (e) => {
-        e.preventDefault();  // чтобы предотвратить перезагрузку страницы
+        e.preventDefault();
 
         try {
             // Вызываем функцию логина
-            await login(registrationForm.email, registrationForm.password);
-            console.log('Успешная регистрация');
+            await login(loginForm.email, loginForm.password);
+            console.log('Успешный вход');
         } catch (error) {
-            console.error('Ошибка при регистрации:', error);
+            console.error('Ошибка при входе:', error);
         }
     }
 
@@ -30,8 +30,8 @@ function Login() {
                             placeholder="Ваш email"
                             type="email"
                             name="useremail"
-                            value={registrationForm.email}
-                            onChange={(event) => setRegistrationForm(prev => ({...prev, email: event.target.value}))}
+                            value={loginForm.email}
+                            onChange={(event) => setLoginForm(prev => ({...prev, email: event.target.value}))}
                         />
 
                         <input
@@ -39,20 +39,20 @@ function Login() {
                             placeholder="Пароль"
                             type="password"
                             name="password"
-                            value={registrationForm.password}
-                            onChange={(event) => setRegistrationForm(prev => ({...prev, password: event.target.value}))}
+                            value={loginForm.password}
+                            onChange={(event) => setLoginForm(prev => ({...prev, password: event.target.value}))}
                         />
                     </div>
                     <div className="md-mx-auto btn-reg">
-                        <button className='button_left' type="submit">Зареєструватися</button> {/* Кнопка для отправки */}
+                        <button className='button_left' type="submit">Войти</button> {/* Кнопка для отправки */}
                         <button className='button_right' type="reset">Уже маю аккаунт</button>
                     </div>
                 </div>
             </form>
 
             <div>
-                <h1>Email: {registrationForm.email}</h1>
-                <h1>Password: {registrationForm.password}</h1>
+                <h1>Email: {loginForm.email}</h1>
+                <h1>Password: {loginForm.password}</h1>
             </div>
         </div>
     );
