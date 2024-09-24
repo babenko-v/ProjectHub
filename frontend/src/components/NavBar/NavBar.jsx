@@ -9,6 +9,7 @@ function Navigation() {
             <Link to="/">Landing</Link>
             <Link to="/registration">Registration</Link>
             <Link to="/login">Login</Link>
+            <Link to="/projects">Projects</Link>
 
             <Outlet></Outlet>
         </nav>

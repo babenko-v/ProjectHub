@@ -7,6 +7,7 @@ import Landing from "../pages/landing/landing.jsx";
 import Navbar from "../components/Navbar/Navbar.jsx";
 import Registration from "../pages/AuthUser/Registration/Registration.jsx";
 import Login from "../pages/AuthUser/Login/Login.jsx";
+import ProjectsList from "../pages/Projects/ProjectsList/ProjectsList.jsx";
 
 
 
@@ -37,6 +38,12 @@ const router = createBrowserRouter([
             {
                 path: "/login",
                 element: <Login />,
+
+            },
+
+            {
+                path: "/projects",
+                element: <ProjectsList />,
 
             },
 

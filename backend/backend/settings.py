@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     'users',
     'identification',
+    'projects',
     
     "rest_framework",
     'corsheaders',
