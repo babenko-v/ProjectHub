@@ -1,43 +1,38 @@
 .navbar {
     display: flex;
     justify-content: space-between;
+
     align-items: center;
-    padding: 10px 20px;
-    background-color: #f8f9fa;
 
-    position: relative;
-    width: auto;
-    top: 0;
-    left: 0;
+    width: 100%;
+    background-color: white;
 
+    padding: 15px 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 120px;
+
+    margin-bottom: 4rem;
+
+    .icon_registr {
+        color: #2c3e50;
+    }
 
     .navbarLinks {
         display: flex;
-        position: absolute;
-        left: 48rem;
-        gap: 60px;
+        gap: 100px;
+        margin-left: 38rem;
     }
 
+    .brand {
+        font-size: 20px;
+        font-weight: bold;
+        color: #32c58a;
+    }
 }
-
-.brand {
-    font-size: 20px;
-    font-weight: bold;
-    color: #32c58a;
-    padding-left: 70px;
-}
-
-
 
 .link {
     text-decoration: none;
     color: black;
-    font-weight: bold;
+    font-size: 16px;
 }
 
-/* Add padding to the body content so it's below the navbar */
-.main-content {
-    padding-top: 60px; /* Adjust to the height of your navbar */
-}
+
