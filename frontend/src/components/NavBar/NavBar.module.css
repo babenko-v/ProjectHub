@@ -18,8 +18,50 @@
 
     .navbarLinks {
         display: flex;
-        gap: 100px;
-        margin-left: 38rem;
+        gap: 70px;
+        margin-left: 28rem;
+
+        .link {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+            border: none;
+            background: none;
+            cursor: pointer;
+
+            & .hover_underline_animation {
+                padding-bottom: 7px;
+                letter-spacing: 4px;
+                font-size: 14px;
+                padding-right: 15px;
+                text-transform: uppercase;
+            }
+
+            &:hover .hover_underline_animation:after {
+                transform: scaleX(1);
+                transform-origin: bottom left;
+            }
+
+            .hover_underline_animation {
+                position: relative;
+                color: black;
+                padding-bottom: 20px;
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    transform: scaleX(0);
+                    height: 2px;
+                    bottom: 0;
+                    left: 0;
+                    background-color: #000000;
+                    transform-origin: bottom right;
+                    transition: transform 0.25s ease-out;
+                }
+            }
+
+        }
     }
 
     .brand {
@@ -28,11 +70,3 @@
         color: #32c58a;
     }
 }
-
-.link {
-    text-decoration: none;
-    color: black;
-    font-size: 16px;
-}
-
-

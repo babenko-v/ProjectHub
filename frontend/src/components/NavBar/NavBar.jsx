@@ -55,10 +55,19 @@ function NavBar() {
                 <div>
                     <Link className={styles.brand} to="/">ProjectHub</Link>
                 </div>
+
                 <div className={styles.navbarLinks}>
-                    <Link to="/about-us" className={styles.link}>About Us</Link>
-                    <Link to="/top-command" className={styles.link}>Top Command</Link>
-                    <Link to="/project" className={styles.link}>Project</Link>
+                    <Link to="/about-us" className={styles.link}>
+                        <span className={styles.hover_underline_animation}> About US </span>
+                    </Link>
+
+                    <Link to="/top-command" className={styles.link}>
+                        <span className={styles.hover_underline_animation}> Top Command </span>
+                    </Link>
+
+                    <Link to="/project" className={styles.link}>
+                        <span className={styles.hover_underline_animation}> Project </span>
+                    </Link>
                 </div>
 
                 <div className="dropdown">
@@ -66,7 +75,7 @@ function NavBar() {
                             aria-expanded="false">
                         <svg className={styles.icon_registr} height="25" viewBox="0 0 15 15" width="25"
                              xmlns="http://www.w3.org/2000/svg">
-                            <path d="M14.915 13.481c-1.097-1.887-2.788-3.241-4.762-3.883a5.17 5.17 0 0 0 2.16-2.508
+                        <path d="M14.915 13.481c-1.097-1.887-2.788-3.241-4.762-3.883a5.17 5.17 0 0 0 2.16-2.508
                                 5.14 5.14 0 0 0 .188-3.297 5.162 5.162 0 0 0-1.857-2.737 5.204 5.204 0 0 0-6.288 0 5.161
                                 5.161 0 0 0-1.857 2.737 5.14 5.14 0 0 0 .189 3.297 5.17 5.17 0 0 0 2.159 2.508c-1.974.641-3.665
                                 1.995-4.762 3.883a.572.572 0 0 0 .42.87.579.579 0 0 0 .578-.296C2.44 11.72 4.839 10.327 7.5 10.327c2.66
@@ -84,7 +93,7 @@ function NavBar() {
                 </div>
             </nav>
 
-            <Sidebar/> {/* Render the Sidebar here */}
+            <Sidebar/>
 
             <div>
                 <Outlet/>
