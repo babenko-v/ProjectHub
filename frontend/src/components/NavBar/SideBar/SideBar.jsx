@@ -19,7 +19,7 @@ function Sidebar() {
                         <a href="/">Home</a>
                     </li>
                     <li className="list-group-item">
-                        <a href="/projects">Projects</a>
+                        <a href="/projects">My project</a>
                     </li>
                     <li className="list-group-item">
                         <a href="/about">About Us</a>

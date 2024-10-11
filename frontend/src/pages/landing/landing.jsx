@@ -1,16 +1,8 @@
 
-
-
 function Landing() {
-
-
-
-
-
 
     return (
         <div className="container-fluid bodys">
-
 
             <div className="container info_abt">
                 <h1 className="header_about_us">About Us</h1>

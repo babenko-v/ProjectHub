@@ -6,7 +6,6 @@ function ProjectsList() {
     const [projects, setProjects] = useState([]);
 
 
-
     useEffect(() => {
         api.get('projects/')
             .then(response => {

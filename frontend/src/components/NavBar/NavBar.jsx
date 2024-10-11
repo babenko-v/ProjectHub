@@ -7,23 +7,6 @@ function NavBar() {
     return (
         <>
             <nav className={styles.navbar}>
-                {/*<button*/}
-                {/*    type="button"*/}
-                {/*    className="btn btn-secondary modal_btn"*/}
-                {/*    data-bs-toggle="offcanvas"*/}
-                {/*    data-bs-target="#navigationSidebar"*/}
-                {/*    aria-controls="navigationSidebar"*/}
-                {/*>*/}
-                {/*    <span className="icon">*/}
-                {/*        <svg viewBox="0 0 175 80" width="40" height="40">*/}
-                {/*            <rect width="80" height="15" fill="#f0f0f0" rx="10"></rect>*/}
-                {/*            <rect y="30" width="80" height="15" fill="#f0f0f0" rx="10"></rect>*/}
-                {/*            <rect y="60" width="80" height="15" fill="#f0f0f0" rx="10"></rect>*/}
-                {/*        </svg>*/}
-                {/*    </span>*/}
-                {/*    <span className="text">MENU</span>*/}
-                {/*</button>*/}
-
                 <button
                     className={styles.side_bar_btn}
                     data-bs-toggle="offcanvas"
@@ -65,7 +48,7 @@ function NavBar() {
                         <span className={styles.hover_underline_animation}> Top Command </span>
                     </Link>
 
-                    <Link to="/project" className={styles.link}>
+                    <Link to="/project_list" className={styles.link}>
                         <span className={styles.hover_underline_animation}> Project </span>
                     </Link>
                 </div>
@@ -86,8 +69,9 @@ function NavBar() {
                         </svg>
                     </button>
                     <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-                        <li><Link className="dropdown-item" to="/profile">Profile</Link></li>
+                        <li><Link className="dropdown-item" to="/user">Profile</Link></li>
                         <li><Link className="dropdown-item" to="/registration">Registration</Link></li>
+                        <li><Link className="dropdown-item" to="/login">Log in</Link></li>
                         <li><Link className="dropdown-item" to="/logout">Logout</Link></li>
                     </ul>
                 </div>

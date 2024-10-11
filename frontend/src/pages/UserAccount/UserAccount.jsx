@@ -1,10 +1,9 @@
-import cl from "./Landing.module.css"
 import {useEffect, useState} from "react";
 import axios from "axios";
 import api from "../../services/interceptors.jsx";
 
 
-function Landing() {
+function UserAccount() {
     const [products, setProducts] = useState([]);
 
 
@@ -15,7 +14,6 @@ function Landing() {
                 setProducts(response.data);
             })
             .catch(error => {
-                console.log(error);
                 console.error("Помилка при отриманні даних:", error);
             });
     }, []);
@@ -36,7 +34,7 @@ function Landing() {
                  data-bs-ride="carousel">
                 <div className="col-xl-6 col-sm-8 www">
                     <div className="carousel-innerс">
-                        <b className={cl.rara}>Bumbai</b>
+                        <b>Bumbai</b>
                     </div>
                     <button className="carousel-control-prev btn-prx" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
                         <span className="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -56,4 +54,4 @@ function Landing() {
     );
 }
 
-export default Landing;
+export default UserAccount;
